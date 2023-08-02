@@ -40,6 +40,24 @@ a {
   text-decoration: none;
 }
 
+button {
+  background-color: rgba(62, 59, 68, 0.7);
+  padding: 0.8em 1.4em;
+  outline: none;
+  border: 0px black solid;
+  border-width: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+button:hover {
+  background-color: rgba(15, 15, 15, 0.98);
+  border-color: rgb(117, 62, 239);
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

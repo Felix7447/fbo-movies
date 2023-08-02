@@ -1,0 +1,29 @@
+.header {
+  width: 100%;
+  height: 10vh;
+  padding: 0 2em;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(to top, transparent, rgba(44, 28, 28, 0.20));
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    text-transform: capitalize;
+  }
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.8em;
+}
+
