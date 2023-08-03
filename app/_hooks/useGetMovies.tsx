@@ -1,18 +1,27 @@
 import React, { useState, useEffect } from 'react'
 
-const useGetMovies = (url: string, options: any) => {
+import { Options, Movies } from '../_types/types'
 
-  const [movies, setMovies] = useState({})
+const useGetMovies = (url: string, options: Options) => {
+
+  const INITIAL_STATE = {
+    page: 0,
+    results: [],
+    total_pages: 0,
+    total_results: 0
+  }
+
+  const [data, setData] = useState<Movies>(INITIAL_STATE)
 
   useEffect(() => {
     fetch(url, options)
       .then(res => res.json())
-      .then(json => setMovies(json))
+      .then(json => setData(json))
       .catch(err => console.error('error:' + err));
-  }, [])
+  }, [url, options])
 
   return {
-    movies
+    data
   }
 }
 

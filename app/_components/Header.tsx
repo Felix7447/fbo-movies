@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <div className='watch-options'>
+        <div className={styles.watch_options}>
           <button>menu</button>
           <a href="movies">movies</a>
           <a href="series">series</a>
@@ -16,7 +16,7 @@ const Header = () => {
             FBO/MOVIES
           </h1>
         </div>
-        <div className='account-options'>
+        <div className={styles.account_options}>
           <button>Search</button>
           <button>Account</button>
         </div>

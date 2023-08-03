@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   z-index: 10;
-  background: linear-gradient(to top, transparent, rgba(44, 28, 28, 0.20));
+  background: linear-gradient(to top, transparent, black);
 }
 
 .nav {
@@ -25,5 +25,36 @@
 .title {
   font-weight: 700;
   font-size: 1.8em;
+}
+
+@media (max-width: 760px) {
+  .header {
+    padding: 0 0.5em;
+  }
+
+  .nav {
+    div {
+      gap: 0.5em;
+    }
+  }
+
+  .watch_options {
+    a {
+      display: none;
+    }
+
+    button {
+      font-size: 10px;
+    }
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 1.2em;
+  }
+
+  .account_options button {
+    font-size: 10px;
+  }
 }
 
