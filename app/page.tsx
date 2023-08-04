@@ -7,6 +7,11 @@ import TopMoviesContainer from './_containers/TopMoviesContainer'
 import TopSeriesContainer from './_containers/TopSeriesContainer'
 import AiringTodayContainer from './_containers/AiringTodayContainer'
 import Footer from './_components/Footer'
+import SpecialMovieContainer from './_containers/SpecialMovieContainer'
+import SpecialSerieContainer from './_containers/SpecialSerieContainer'
+
+const SPECIAL_MOVIE_ID = 346698
+const SPECIAL_SERIE_ID = 72879
 
 export default function Home() {
   return (
@@ -15,7 +20,9 @@ export default function Home() {
       <MainSlider />
       <MoviesContainer />
       <SeriesContainer />
+      <SpecialMovieContainer movieID={SPECIAL_MOVIE_ID}/>
       <TopMoviesContainer />
+      <SpecialSerieContainer serieID={SPECIAL_SERIE_ID}/>
       <TopSeriesContainer />
       <AiringTodayContainer />
       <Footer />

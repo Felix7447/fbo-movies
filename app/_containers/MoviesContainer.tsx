@@ -4,19 +4,10 @@ import styles from "@/styles/containerSlider.module.scss"
 import useGetMovies from '../_hooks/useGetMovies'
 import { endpoints } from '../_config/endpoints'
 import SliderComponent from '../_components/SliderComponent'
-
-const ACCESS_TOKEN = process.env.NEXT_PUBLIC_ACCESS_TOKEN
-
-const OPTIONS = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: `Bearer ${ACCESS_TOKEN}`
-  }
-}
+import { options } from '../_config/fetchOptions'
 
 const MoviesContainer = () => {
-  const { data } = useGetMovies(endpoints.discoverMovies, OPTIONS)
+  const { data } = useGetMovies(endpoints.discoverMovies, options)
 
   const { results } = data
   

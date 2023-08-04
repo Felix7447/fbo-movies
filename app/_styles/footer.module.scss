@@ -21,3 +21,18 @@
     height: 1.5em;
   }
 }
+
+@media (max-width: 480px) {
+  .footer {
+    align-items: center;
+  }
+  
+  .main {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .icons {
+    justify-content: center;
+  }
+}
