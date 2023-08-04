@@ -1,17 +1,16 @@
 "use client"
 import React from 'react'
 import styles from '@/styles/mainSlider.module.scss'
-import Image from 'next/image';
 
-import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
+import { Splide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
 import useGetMovies from '../_hooks/useGetMovies';
 import { endpoints } from '../_config/endpoints';
+import MainSlide from '../_components/MainSlide';
 
 
 const ACCESS_TOKEN = process.env.NEXT_PUBLIC_ACCESS_TOKEN
-const IMAGE_URL = process.env.NEXT_PUBLIC_IMAGE_URL
 
 const OPTIONS = {
   method: 'GET',
@@ -23,8 +22,7 @@ const OPTIONS = {
 
 
 const MainSlider = () => {
-  const { data } = useGetMovies(endpoints.topRated, OPTIONS)
-  console.log(data);
+  const { data } = useGetMovies(endpoints.trending, OPTIONS)
 
   const { results } = data 
   
@@ -48,17 +46,7 @@ const MainSlider = () => {
         <SplideTrack className={styles.splide__track}>
         {
           results?.slice(0, 7).map((movie) => (
-            <SplideSlide key={`movie-${movie.id}`} className={styles.splide_slide}>
-              <Image src={`${IMAGE_URL}${movie.backdrop_path}`} alt={`movie-${movie.id}`} fill priority />
-              <article className={styles.splide__info_container}>
-                <aside className={styles.splide__info}>
-                  <h2>{movie?.title}</h2>
-                  <p>Release Date: {movie.release_date}</p>
-                  <p>{movie.overview.slice(0, 100)}...</p>
-                  <button className={styles.info__button}>More Info</button>
-                </aside>
-              </article>
-            </SplideSlide>
+            <MainSlide key={`movie-${movie.id}`} movie={movie}/>
           ))
         }
         </SplideTrack>

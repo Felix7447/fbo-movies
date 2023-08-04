@@ -32,6 +32,8 @@ body {
 
 body {
   background-image: url('./_assets/images/default-3840x2160.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
 }
 
