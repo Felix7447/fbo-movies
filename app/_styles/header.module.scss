@@ -6,6 +6,7 @@
   top: 0;
   z-index: 10;
   background: linear-gradient(to top, transparent, black);
+  transition: all 350ms;
 }
 
 .nav {
@@ -25,11 +26,40 @@
 .title {
   font-weight: 700;
   font-size: 1.8em;
+
+  span {
+    font-weight: 300;
+    margin-left: -8px;
+  }
+}
+
+.menu_button {
+  padding: 0;
+  border: none;
+  background: none;
+
+  &:hover {
+    background: none;
+    border: none;
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+}
+
+.watch_options > a {
+  opacity: 0.7;
+  transition: 250ms;
+
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 @media (max-width: 760px) {
   .header {
-    padding: 0 0.5em;
+    padding: 0 1.5em;
   }
 
   .nav {
@@ -38,9 +68,22 @@
     }
   }
 
+  .title {
+    padding-left: 1.5em;
+  }
+
+  .title > span {
+    margin-left: -4px;
+  }
+
   .watch_options {
     a {
       display: none;
+      opacity: 0.7;
+
+      &:hover {
+        opacity: 0.9;
+      }
     }
 
     button {

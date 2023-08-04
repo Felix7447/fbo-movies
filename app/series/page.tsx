@@ -2,13 +2,13 @@ import React from 'react'
 import styles from '@/styles/page.module.scss'
 import Header from '../_components/Header'
 
-const Movies = () => {
+const Series = () => {
   return (
     <section className={styles.main}>
       <Header />
-      Movies
+      Series
     </section>
   )
 }
 
-export default Movies
+export default Series

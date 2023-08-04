@@ -6,6 +6,7 @@ import SeriesContainer from './_containers/SeriesContainer'
 import TopMoviesContainer from './_containers/TopMoviesContainer'
 import TopSeriesContainer from './_containers/TopSeriesContainer'
 import AiringTodayContainer from './_containers/AiringTodayContainer'
+import Footer from './_components/Footer'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <TopMoviesContainer />
       <TopSeriesContainer />
       <AiringTodayContainer />
+      <Footer />
     </main>
   )
 }
