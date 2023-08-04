@@ -15,7 +15,9 @@ const Footer = () => {
           <FacebookIcon />
           <InstagramIcon />
         </article>
-        <article>Rights</article>
+        <article>
+          © 2023 FBO Movies. Todos los derechos reservados.
+        </article>
       </main>
     </footer>
   )

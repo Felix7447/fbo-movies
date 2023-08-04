@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import styles from '@/styles/header.module.scss'
 
 import BurgerMenuIcon from '../_icons/BurgerMenuIcon'
@@ -26,7 +26,12 @@ const Header = () => {
     }
   }
 
-  window.addEventListener('scroll', changeBackground)
+  useEffect(() => {
+    window.addEventListener('scroll', changeBackground)
+
+    return () => window.removeEventListener('scroll', changeBackground)
+  })
+
 
   return (
     <header ref={header} className={styles.header}>
