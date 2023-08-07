@@ -10,7 +10,6 @@ const IMAGE_URL = process.env.NEXT_PUBLIC_IMAGE_URL
 
 const SpecialMovieContainer = ({ movieID }: { movieID: number}) => {
   const { movie } = useGetMovieByID(movieById(movieID), options)
-  console.log(movie);
   
   return (
     <section className={styles.container}>

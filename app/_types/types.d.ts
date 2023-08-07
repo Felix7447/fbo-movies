@@ -1,5 +1,5 @@
 export interface Options {
-  method: string,
+  method: string
   headers: {
     accept: string,
     Authorization: string
@@ -32,68 +32,94 @@ export interface Result {
 }
 
 export interface MovieByID {
-  adult: boolean,
-  backdrop_path: string,
-  belongs_to_collection: any,
-  budget: number,
-  genres: Genre[],
-  homepage: string,
-  id: number,
-  imdb_id: string,
-  original_language: string,
-  original_title: string,
-  overview: string,
-  popularity: number,
-  poster_path: string,
-  production_companies: Production_company[],
-  production_countries: Production_country[],
-  release_date: string,
-  revenue: number,
-  runtime: number,
-  spoken_languages: Spoken_language[],
-  status: string,
-  tagline: string,
-  title: string,
-  video: boolean,
-  vote_average: number,
+  adult: boolean
+  backdrop_path: string
+  belongs_to_collection: any
+  budget: number
+  genres: Genre[]
+  homepage: string
+  id: number
+  imdb_id: string
+  original_language: string
+  original_title: string
+  overview: string
+  popularity: number
+  poster_path: string
+  production_companies: Production_company[]
+  production_countries: Production_country[]
+  release_date: string
+  revenue: number
+  runtime: number
+  spoken_languages: Spoken_language[]
+  status: string
+  tagline: string
+  title: string
+  video: boolean
+  vote_average: number
   vote_count: number
 }
 
 export interface SerieById {
-  adult: boolean,
-  backdrop_path: string,
-  created_by: createdBy[],
-  episode_run_time: number[],
-  first_air_date: string,
-  genres: Genre[],
-  homepage: string,
-  id: number,
-  in_production: boolean,
-  languages: any[],
-  last_air_date: string,
+  adult: boolean
+  backdrop_path: string
+  created_by: createdBy[]
+  episode_run_time: number[]
+  first_air_date: string
+  genres: Genre[]
+  homepage: string
+  id: number
+  in_production: boolean
+  languages: any[]
+  last_air_date: string
   last_episode_to_air: {
     [key: string]: number | string | null
-  },
-  name: string,
-  next_episode_to_air: null,
-  networks: any[],
-  number_of_episodes: number,
-  number_of_seasons: number,
-  origin_country: string[],
-  original_language: string,
-  original_name: string,
-  overview: string,
-  popularity: number,
-  poster_path: string,
-  production_companies: Production_company[],
-  production_countries: Production_country[],
-  seasons: Season[],
-  spoken_languages: Spoken_language[],
-  status: string,
-  tagline: string,
-  type: string,
-  vote_average: number,
+  }
+  name: string
+  next_episode_to_air: null
+  networks: any[]
+  number_of_episodes: number
+  number_of_seasons: number
+  origin_country: string[]
+  original_language: string
+  original_name: string
+  overview: string
+  popularity: number
+  poster_path: string
+  production_companies: Production_company[]
+  production_countries: Production_country[]
+  seasons: Season[]
+  spoken_languages: Spoken_language[]
+  status: string
+  tagline: string
+  type: string
+  vote_average: number
   vote_count: number
+}
+
+export interface Search {
+  page: number
+  results: SearchResult[]
+  total_pages: number
+  total_results: number
+}
+
+export interface SearchResult {
+  adult: boolean
+  backdrop_path: string
+  id: number
+  name: string
+  original_language: string
+  original_name: string
+  overview: string
+  poster_path: string
+  media_type: string
+  genre_ids: number[]
+  popularity: number
+  first_air_date: string
+  vote_average: number
+  vote_count: number
+  origin_country: string[]
+  title?: string
 }
 
 interface Genre {
@@ -102,9 +128,9 @@ interface Genre {
 }
 
 interface Production_company {
-  id: number,
-  logo_path: null,
-  name: string,
+  id: number
+  logo_path: null
+  name: string
   origin_country: string 
 }
 
@@ -114,26 +140,26 @@ interface Production_country {
 }
 
 interface Spoken_language {
-  english_name: string,
-  iso_639_1: string,
+  english_name: string
+  iso_639_1: string
   name: string
 }
 
 interface Season {
-  air_date: string,
-  episode_count: number,
-  id: number,
-  name: string,
-  overview: string,
-  poster_path: null,
-  season_number: number,
+  air_date: string
+  episode_count: number
+  id: number
+  name: string
+  overview: string
+  poster_path: null
+  season_number: number
   vote_average: number
 }
 
 interface createdBy {
-  id: 0,
-  credit_id: string,
-  name: string,
-  gender: number,
+  id: 0
+  credit_id: string
+  name: string
+  gender: number
   profile_path: null
 }

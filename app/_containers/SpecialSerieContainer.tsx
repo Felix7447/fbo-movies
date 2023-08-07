@@ -10,7 +10,6 @@ const IMAGE_URL = process.env.NEXT_PUBLIC_IMAGE_URL
 
 const SpecialSerieContainer = ({ serieID }: { serieID: number }) => {
   const { serie } = useGetSerieByID(serieById(serieID), options)
-  console.log(serie);
   
   return (
     <section className={styles.container}>

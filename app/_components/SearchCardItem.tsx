@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from '@/styles/searchCardItem.module.scss'
-import { Result } from '../_types/types'
+import { Result, SearchResult } from '../_types/types'
 import Image from 'next/image'
 import AddButton from './AddButton'
 
 const IMAGE_URL = process.env.NEXT_PUBLIC_IMAGE_URL
 
-const SearchCardItem = ({ info }: { info: Result }) => {
+const SearchCardItem = ({ info }: { info: Result | SearchResult }) => {
   return (
     <main className={styles.grid_item}>
       <Image 
