@@ -1,6 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { inter } from './fonts'
+import Header from './_components/Header'
+import Footer from './_components/Footer'
 
 export const metadata: Metadata = {
   title: 'FBO MOVIES | Info About Your Favorite Movies',
@@ -14,7 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }

@@ -9,6 +9,7 @@ import AiringTodayContainer from './_containers/AiringTodayContainer'
 import Footer from './_components/Footer'
 import SpecialMovieContainer from './_containers/SpecialMovieContainer'
 import SpecialSerieContainer from './_containers/SpecialSerieContainer'
+import { endpoints } from './_config/endpoints'
 
 const SPECIAL_MOVIE_ID = 346698
 const SPECIAL_SERIE_ID = 72879
@@ -16,8 +17,7 @@ const SPECIAL_SERIE_ID = 72879
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Header />
-      <MainSlider />
+      <MainSlider endpoint={endpoints.trending} />
       <MoviesContainer />
       <SeriesContainer />
       <SpecialMovieContainer movieID={SPECIAL_MOVIE_ID}/>
@@ -25,7 +25,6 @@ export default function Home() {
       <SpecialSerieContainer serieID={SPECIAL_SERIE_ID}/>
       <TopSeriesContainer />
       <AiringTodayContainer />
-      <Footer />
     </main>
   )
 }

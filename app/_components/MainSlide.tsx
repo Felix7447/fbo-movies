@@ -13,7 +13,11 @@ const MainSlide = ({ movie }: { movie: Result }) => {
       <Image src={`${IMAGE_URL}${movie.backdrop_path}`} alt={`movie-${movie.id}`} fill priority />
       <Link href={"/#"} className={styles.splide__info_container}>
         <aside className={styles.splide__info}>
-          <h2>{movie?.title}</h2>
+          <h2>
+            {
+              (movie.title) ? movie.title : movie?.name
+            }
+          </h2>
           <p>Release Date: {movie.release_date}</p>
           <p>{movie.overview.slice(0, 100)}...</p>
           <button className={styles.info__button}>More Info</button>

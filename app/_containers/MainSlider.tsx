@@ -8,21 +8,10 @@ import '@splidejs/react-splide/css';
 import useGetData from '../_hooks/useGetData';
 import { endpoints } from '../_config/endpoints';
 import MainSlide from '../_components/MainSlide';
+import { options } from '../_config/fetchOptions';
 
-
-const ACCESS_TOKEN = process.env.NEXT_PUBLIC_ACCESS_TOKEN
-
-const OPTIONS = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: `Bearer ${ACCESS_TOKEN}`
-  }
-}
-
-
-const MainSlider = () => {
-  const { data } = useGetData(endpoints.trending, OPTIONS)
+const MainSlider = ({ endpoint }: { endpoint: string }) => {
+  const { data } = useGetData(endpoint, options)
 
   const { results } = data 
   
