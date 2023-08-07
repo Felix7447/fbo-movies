@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import { Options, Movies } from '../_types/types'
 
-const useGetMovies = (url: string, options: Options) => {
+const useGetData = (url: string, options: Options) => {
 
   const INITIAL_STATE = {
     page: 0,
@@ -25,4 +25,4 @@ const useGetMovies = (url: string, options: Options) => {
   }
 }
 
-export default useGetMovies
+export default useGetData

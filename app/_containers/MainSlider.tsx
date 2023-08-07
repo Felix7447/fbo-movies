@@ -5,7 +5,7 @@ import styles from '@/styles/mainSlider.module.scss'
 import { Splide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
-import useGetMovies from '../_hooks/useGetMovies';
+import useGetData from '../_hooks/useGetData';
 import { endpoints } from '../_config/endpoints';
 import MainSlide from '../_components/MainSlide';
 
@@ -22,7 +22,7 @@ const OPTIONS = {
 
 
 const MainSlider = () => {
-  const { data } = useGetMovies(endpoints.trending, OPTIONS)
+  const { data } = useGetData(endpoints.trending, OPTIONS)
 
   const { results } = data 
   

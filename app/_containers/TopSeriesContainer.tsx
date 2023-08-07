@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import styles from "@/styles/containerSlider.module.scss"
-import useGetMovies from '../_hooks/useGetMovies'
+import useGetData from '../_hooks/useGetData'
 import { endpoints } from '../_config/endpoints'
 import SliderComponent from '../_components/SliderComponent'
 
@@ -15,7 +15,7 @@ const OPTIONS = {
   }
 }
 const TopSeriesContainer = () => {
-  const { data } = useGetMovies(endpoints.topRatedSeries, OPTIONS)
+  const { data } = useGetData(endpoints.topRatedSeries, OPTIONS)
 
   const { results } = data
   
