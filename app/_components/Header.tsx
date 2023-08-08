@@ -9,6 +9,7 @@ import SearchIcon from '../_icons/SearchIcon'
 import { montserrat } from '../fonts'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import BurgerMenu from './BurgerMenu'
 
 const Header = () => {
   const router = useRouter()
@@ -37,13 +38,11 @@ const Header = () => {
     <header ref={header} className={styles.header}>
       <nav className={styles.nav}>
         <div className={styles.watch_options}>
-          <button className={styles.menu_button}>
-            <BurgerMenuIcon />
-          </button>
+          <BurgerMenu />
           <a href="movies">movies</a>
           <a href="series">series</a>
         </div>
-        <Link href={"/"} className='main-logo'>
+        <Link href={"/"} className={styles.title_link}>
           <h1 className={styles.title}>
             FBO <span className={montserrat.className}>MOVIES</span>
           </h1>

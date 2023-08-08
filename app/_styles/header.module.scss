@@ -13,6 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   height: 100%;
 
   div {
@@ -21,6 +22,14 @@
     gap: 1em;
     text-transform: capitalize;
   }
+}
+
+.title_link {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 174px;
+  margin: 0 auto;
 }
 
 .title {
