@@ -1,0 +1,12 @@
+.section {
+  background-color: black;
+  min-height: 100vh;
+
+  main {
+    height: 80vh;
+  }
+}
+
+.section + footer {
+  background-color: black;
+}

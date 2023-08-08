@@ -1,0 +1,22 @@
+.info {
+  position: absolute;
+  height: 8em;
+  width: 50%;
+  padding: 0 2em;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+@media (max-width: 960px) {
+  .info {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .info {
+    width: 100%;
+  }
+}

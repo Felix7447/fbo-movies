@@ -39,8 +39,8 @@ const Header = () => {
       <nav className={styles.nav}>
         <div className={styles.watch_options}>
           <BurgerMenu />
-          <a href="movies">movies</a>
-          <a href="series">series</a>
+          <Link href="/movies">movies</Link>
+          <Link href="/series">series</Link>
         </div>
         <Link href={"/"} className={styles.title_link}>
           <h1 className={styles.title}>

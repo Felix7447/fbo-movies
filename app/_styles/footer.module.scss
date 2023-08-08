@@ -22,13 +22,14 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 680px) {
   .footer {
     align-items: center;
   }
   
   .main {
     flex-direction: column;
+    text-align: center;
     gap: 1em;
   }
 
