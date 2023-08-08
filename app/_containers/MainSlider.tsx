@@ -6,7 +6,6 @@ import { Splide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
 import useGetData from '../_hooks/useGetData';
-import { endpoints } from '../_config/endpoints';
 import MainSlide from '../_components/MainSlide';
 import { options } from '../_config/fetchOptions';
 

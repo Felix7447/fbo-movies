@@ -3,12 +3,11 @@ import styles from "@/styles/slider.module.scss"
 import Image from 'next/image'
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import { Result } from '../_types/types'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
 const IMAGE_URL = process.env.NEXT_PUBLIC_IMAGE_URL
 
-const SliderComponent = ({ results }: { results: Result[] }) => {
+const MovieSliderComponent = ({ results }: { results: Result[] }) => {
   return (
     <Splide
       className={styles.slider}
@@ -47,4 +46,4 @@ const SliderComponent = ({ results }: { results: Result[] }) => {
   )
 }
 
-export default SliderComponent
+export default MovieSliderComponent
