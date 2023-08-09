@@ -24,24 +24,6 @@
   }
 }
 
-.title_link {
-  position: absolute;
-  right: 0;
-  left: 0;
-  width: 174px;
-  margin: 0 auto;
-}
-
-.title {
-  font-weight: 700;
-  font-size: 1.8em;
-
-  span {
-    font-weight: 300;
-    margin-left: -8px;
-  }
-}
-
 .menu_button {
   padding: 0;
   border: none;
@@ -77,14 +59,6 @@
     }
   }
 
-  .title {
-    padding-left: 1.5em;
-  }
-
-  .title > span {
-    margin-left: -4px;
-  }
-
   .watch_options > button {
     font-size: 10px;
   }
@@ -96,11 +70,6 @@
     &:hover {
       opacity: 0.9;
     }
-  }
-
-  .title {
-    font-weight: 600;
-    font-size: 1.2em;
   }
 
   .account_options > button {

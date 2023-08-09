@@ -1,14 +1,24 @@
+"use client"
 import React from 'react'
 import styles from '@/styles/searchCardItem.module.scss'
 import { Result, SearchResult } from '../_types/types'
 import Image from 'next/image'
 import AddButton from './AddButton'
+import Link from 'next/link'
 
 const IMAGE_URL = process.env.NEXT_PUBLIC_IMAGE_URL
 
 const SearchCardItem = ({ info }: { info: Result | SearchResult }) => {
+  let cardLink = ""
+
+  if (info.title) {
+    cardLink = `/movie/${info.id}`
+  } else {
+    cardLink = `/serie/${info.id}`
+  }
+
   return (
-    <main className={styles.grid_item}>
+    <Link href={cardLink} className={styles.grid_item}>
       <Image 
         src={`${IMAGE_URL}${info.poster_path}`} 
         alt={info.name || info.title || ""} 
@@ -25,7 +35,7 @@ const SearchCardItem = ({ info }: { info: Result | SearchResult }) => {
         </h1>
         <AddButton />
       </aside>
-    </main>
+    </Link>
   )
 }
 

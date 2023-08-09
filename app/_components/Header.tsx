@@ -5,10 +5,10 @@ import styles from '@/styles/header.module.scss'
 import AccountIcon from '../_icons/AccountIcon'
 import SearchIcon from '../_icons/SearchIcon'
 
-import { montserrat } from '../fonts'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import BurgerMenu from './BurgerMenu'
+import Title from './Title'
 
 const Header = () => {
   const router = useRouter()
@@ -41,11 +41,7 @@ const Header = () => {
           <Link href="/movies">movies</Link>
           <Link href="/series">series</Link>
         </div>
-        <Link href={"/"} className={styles.title_link}>
-          <h1 className={styles.title}>
-            FBO <span className={montserrat.className}>MOVIES</span>
-          </h1>
-        </Link>
+        <Title />
         <div className={styles.account_options}>
           <button className={styles.menu_button} onClick={() => router.push('/search')}>
             <SearchIcon />

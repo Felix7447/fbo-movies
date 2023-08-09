@@ -3,6 +3,15 @@
   position: relative;
   width: 100%;
   height: 24em;
+  height: 480px;
+  padding: 8px;
+  transition: border 100ms;
+  cursor: pointer;
+
+  &:hover {
+    border: 3px rgb(117, 62, 239) solid;
+    border-radius: 4px;
+  }
 }
 
 .info {
