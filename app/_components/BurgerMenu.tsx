@@ -43,10 +43,10 @@ const BurgerMenu = () => {
             <Link href="/series" onClick={handleCloseMenu}>Series</Link>
           </li>
           <li>
-            <Link href="" onClick={handleCloseMenu}>Top Rated Movies</Link>
+            <Link href="/category/top-rated-movies" onClick={handleCloseMenu}>Top Rated Movies</Link>
           </li>
           <li>
-            <Link href="" onClick={handleCloseMenu}>Airing Today Series</Link>
+            <Link href="/category/airing-today-series" onClick={handleCloseMenu}>Airing Today Series</Link>
           </li>
         </ul>
       </nav>
