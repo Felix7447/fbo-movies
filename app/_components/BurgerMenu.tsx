@@ -4,6 +4,7 @@ import styles from "@/styles/burgerMenu.module.scss"
 import BurgerMenuIcon from '../_icons/BurgerMenuIcon'
 import CloseIcon from '../_icons/CloseIcon'
 import Link from 'next/link'
+import Title from './Title'
 
 const BurgerMenu = () => {  
 
@@ -49,6 +50,7 @@ const BurgerMenu = () => {
             <Link href="/category/airing-today-series" onClick={handleCloseMenu}>Airing Today Series</Link>
           </li>
         </ul>
+        <Title relative={true} />
       </nav>
     </>
   )
