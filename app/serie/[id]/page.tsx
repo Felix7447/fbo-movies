@@ -19,9 +19,9 @@ const Serie = async ({ params }: Props) => {
   const serie = await getSerie(params.id)
 
   return (
-    <section className={styles.section}>
+    <main className={styles.section}>
       <MainSingleSerie serie={serie}/>
-    </section>
+    </main>
   )
 }
 

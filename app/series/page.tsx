@@ -8,12 +8,12 @@ import TopSeriesContainer from '../_containers/TopSeriesContainer'
 
 const Series = () => {
   return (
-    <section className={styles.main}>
+    <main className={styles.main}>
       <MainSlider endpoint={endpoints.discoverSeries} />
       <AiringTodayContainer />
       <SeriesContainer />
       <TopSeriesContainer />
-    </section>
+    </main>
   )
 }
 

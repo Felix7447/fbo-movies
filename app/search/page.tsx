@@ -4,9 +4,9 @@ import SearchContainer from '../_containers/SearchContainer'
 
 const Search = () => {
   return (
-    <section className={styles.main}>
+    <main className={styles.main}>
       <SearchContainer />
-    </section>
+    </main>
   )
 }
 

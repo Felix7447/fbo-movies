@@ -1,19 +1,21 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from "@/styles/burgerMenu.module.scss"
 import BurgerMenuIcon from '../_icons/BurgerMenuIcon'
 import CloseIcon from '../_icons/CloseIcon'
 import Link from 'next/link'
 
-const BurgerMenu = () => {
+const BurgerMenu = () => {  
 
   const [menuOpen, setMenuOpen] = useState(false)
 
   const handleOpenMenu = () => {
+    document.documentElement.style.overflow = 'hidden'
     setMenuOpen(true)
   }
 
   const handleCloseMenu = () => {
+    document.documentElement.style.overflow = 'auto'
     setMenuOpen(false)
   }
 

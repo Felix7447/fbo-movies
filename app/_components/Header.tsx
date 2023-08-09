@@ -2,7 +2,6 @@
 import React, { useRef, useEffect } from 'react'
 import styles from '@/styles/header.module.scss'
 
-import BurgerMenuIcon from '../_icons/BurgerMenuIcon'
 import AccountIcon from '../_icons/AccountIcon'
 import SearchIcon from '../_icons/SearchIcon'
 
