@@ -8,6 +8,12 @@ import AddButton from './AddButton'
 const IMAGE_URL = process.env.NEXT_PUBLIC_IMAGE_URL
 
 const MainSingleMovie = ({ movie }: { movie: MovieByID }) => {
+
+  let movieBody = {
+    media_type: "movie",
+    media_id: movie.id
+  }
+
   return (
     <main className={styles.splide_slide}>
       <Image src={`${IMAGE_URL}${movie.backdrop_path}`} alt={`movie-${movie.id}`} fill priority />
@@ -17,7 +23,7 @@ const MainSingleMovie = ({ movie }: { movie: MovieByID }) => {
         <p>{movie.overview}</p>
         <b>Tagline: {movie.tagline}</b>
         <i>Status: {movie.status}</i>
-        <AddButton/>
+        <AddButton body={movieBody}/>
       </aside>
     </main>
   )

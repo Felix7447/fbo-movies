@@ -1,6 +1,6 @@
 import { endpoints } from "./endpoints";
 
-export const MenuRoutes = [
+export const menuRoutes = [
   {
     route: 'top-rated-movies',
     title: 'Top Rated Movies',

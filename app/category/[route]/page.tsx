@@ -4,7 +4,7 @@ import styles from '@/styles/categoryPage.module.scss'
 import { options } from '@/app/_config/fetchOptions'
 import { Movies } from '@/app/_types/types'
 import SearchCardItem from '@/app/_components/SearchCardItem'
-import { MenuRoutes } from '@/app/_config/MenuRoutes'
+import { menuRoutes } from '@/app/_config/menuRoutes'
 import MovieSliderComponent from '@/app/_components/MovieSliderComponent'
 import SerieSliderComponent from '@/app/_components/SerieSliderComponent'
 
@@ -17,7 +17,7 @@ interface Props {
 export const dynamicParams = false
 
 export function generateStaticParams() {
-  return MenuRoutes.map((route) => (
+  return menuRoutes.map((route) => (
     { route: route.route }
   ))
 }
@@ -34,7 +34,7 @@ const getData = async (endpoint: string) => {
 
 const Category = async ({ params }: Props) => {
 
-  const { title, endpoint, mediaType } = MenuRoutes.filter((route) => route.route === params.route).pop() || {}
+  const { title, endpoint, mediaType } = menuRoutes.filter((route) => route.route === params.route).pop() || {}
   const data = await getData(endpoint || "")
 
   return (

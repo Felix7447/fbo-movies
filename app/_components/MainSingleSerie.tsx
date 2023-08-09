@@ -8,6 +8,12 @@ import AddButton from './AddButton'
 const IMAGE_URL = process.env.NEXT_PUBLIC_IMAGE_URL
 
 const MainSingleSerie = ({ serie }: { serie: SerieById }) => {
+
+  let serieBody = {
+    media_type: "tv",
+    media_id: serie.id
+  }
+
   return (
     <main className={styles.splide_slide}>
       <Image src={`${IMAGE_URL}${serie.backdrop_path}`} alt={`serie-${serie.id}`} fill priority />
@@ -17,7 +23,7 @@ const MainSingleSerie = ({ serie }: { serie: SerieById }) => {
         <p>{serie.overview}</p>
         <b>Tagline: {serie.tagline}</b>
         <i>Status: {serie.status}</i>
-        <AddButton/>
+        <AddButton body={serieBody} />
       </aside>
     </main>
   )

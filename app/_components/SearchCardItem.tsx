@@ -10,11 +10,18 @@ const IMAGE_URL = process.env.NEXT_PUBLIC_IMAGE_URL
 
 const SearchCardItem = ({ info }: { info: Result | SearchResult }) => {
   let cardLink = ""
+  let body = {
+    media_type: "",
+    media_id: info.id,
+    favorite: false
+  }
 
   if (info.title) {
     cardLink = `/movie/${info.id}`
+    body.media_type = "movie"
   } else {
     cardLink = `/serie/${info.id}`
+    body.media_type = "tv"
   }
 
   return (
@@ -33,7 +40,7 @@ const SearchCardItem = ({ info }: { info: Result | SearchResult }) => {
               : info?.name
           }
         </h1>
-        <AddButton />
+        <AddButton body={body} />
       </aside>
     </Link>
   )
