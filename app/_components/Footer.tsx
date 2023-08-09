@@ -5,12 +5,9 @@ import TwitterIcon from '../_icons/TwitterIcon'
 import FacebookIcon from '../_icons/FacebookIcon'
 import InstagramIcon from '../_icons/InstagramIcon'
 
-const Footer = ({ dark }: { dark?: boolean }) => {
-
-  const footerClass = dark ? styles.black_footer : styles.footer
-
+const Footer = () => {
   return (
-    <footer className={footerClass}>
+    <footer className={styles.footer}>
       <main className={styles.main}>
         <article className={styles.icons}>
           <YTIcon />

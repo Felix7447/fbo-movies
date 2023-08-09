@@ -21,6 +21,10 @@
   }
 }
 
+.info_button {
+  width: 40%;
+  font-size: 18px;
+}
 
 .picture { 
   grid-column: span 6;
@@ -50,6 +54,11 @@
     font-size: 18px;
   }
 
+  .info_button {
+    width: 50%;
+    font-size: 16px;
+  }
+
   .picture {
     grid-column: span 8;
   }
@@ -63,10 +72,12 @@
   .aside {
     grid-column: span 12;
     text-align: center;
+    order: 2;
   }
 
   .picture {
     grid-column: span 12;
+    order: 1;
   }
 }
 
