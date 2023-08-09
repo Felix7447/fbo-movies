@@ -9,5 +9,7 @@ export const endpoints = {
   discoverSeries: `${API_URL}discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc`,
   topRatedSeries: `${API_URL}tv/top_rated?language=en-US&page=1`,
   airingTodaySeries: `${API_URL}tv/airing_today?language=en-US&page=1`,
-  addFavorite: `${API_URL}account/${ACCOUNT_ID}/favorite`
+  addFavorite: `${API_URL}account/${ACCOUNT_ID}/favorite`,
+  favoriteMovies: `${API_URL}account/${ACCOUNT_ID}/favorite/movies?language=en-US&page=1&sort_by=created_at.asc`,
+  favoriteSeries: `${API_URL}account/${ACCOUNT_ID}/favorite/tv?language=en-US&page=1&sort_by=created_at.asc`,
 }

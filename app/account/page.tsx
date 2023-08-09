@@ -2,6 +2,8 @@ import React from 'react'
 import styles from '@/styles/page.module.scss'
 import account_styles from '@/styles/accountPage.module.scss'
 import ProfileCircle from '../_components/ProfileCircle'
+import FavoriteMoviesContainer from '../_containers/FavoriteMoviesContainer'
+import FavoriteSeriesContainer from '../_containers/FavoriteSeriesContainer'
 
 const Account = () => {
   return (
@@ -13,8 +15,8 @@ const Account = () => {
       </main>
       <article className={account_styles.article}>
         <h2>My list</h2>
-        <footer>
-        </footer>
+        <FavoriteMoviesContainer />
+        <FavoriteSeriesContainer />
       </article>
     </section>
   )

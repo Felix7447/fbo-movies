@@ -34,7 +34,7 @@ const MainSlider = ({ endpoint }: { endpoint: string }) => {
         <SplideTrack className={styles.splide__track}>
         {
           results?.slice(0, 7).map((movie) => (
-            <MainSlide key={`movie-${movie.id}`} movie={movie}/>
+            <MainSlide key={`trending-${movie.id}`} movie={movie}/>
           ))
         }
         </SplideTrack>

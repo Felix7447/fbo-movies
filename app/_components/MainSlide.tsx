@@ -9,10 +9,11 @@ import Link from 'next/link';
 const IMAGE_URL = process.env.NEXT_PUBLIC_IMAGE_URL
 
 const MainSlide = ({ movie }: { movie: Result }) => {  
+  let mediaType = movie.media_type === 'movie' ? 'movie' : 'serie'
   return (
     <SplideSlide className={styles.splide_slide}>
       <Image src={`${IMAGE_URL}${movie.backdrop_path}`} alt={`movie-${movie.id}`} fill priority />
-      <Link href={"/#"} className={styles.splide__info_container}>
+      <Link href={`/${mediaType}/${movie.id}`} className={styles.splide__info_container}>
         <aside className={styles.splide__info}>
           <h2>
             {
