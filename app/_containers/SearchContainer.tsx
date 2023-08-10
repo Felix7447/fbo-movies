@@ -18,7 +18,7 @@ const SearchContainer = () => {
   const { searchValue, handleSearch } = useSearchBar()
   
   const { searchData } = useGetDataBySearch(multiSearch(searchValue), options)
-  const filterResults = searchData.results.filter((result) => result.media_type === ('tv' || 'movie'))
+  const filterResults = searchData.results.filter((result) => result.media_type === 'tv' ||  result.media_type === 'movie')
 
   return (
     <section className={styles.container}>
