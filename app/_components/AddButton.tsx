@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from '@/styles/addButton.module.scss'
 import PlusIcon from '../_icons/PlusIcon'
 import { endpoints } from '../_config/endpoints'
@@ -17,7 +17,11 @@ interface Props {
 
 const AddButton = ({ body }: Props) => {
 
-  const [isFav, setIsFav] = useState<string | null>(sessionStorage.getItem(body.media_id.toString()))
+  const [isFav, setIsFav] = useState<string | null>(null)
+
+  useEffect(() => {
+    setIsFav(window.sessionStorage.getItem(body.media_id.toString()))
+  }, [])
 
   const addToFavorites = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault()

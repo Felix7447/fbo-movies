@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import styles from "@/styles/burgerMenu.module.scss"
 import BurgerMenuIcon from '../_icons/BurgerMenuIcon'
 import CloseIcon from '../_icons/CloseIcon'

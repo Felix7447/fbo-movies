@@ -1,14 +1,9 @@
 "use client"
 import React from 'react'
 import styles from "@/styles/slider.module.scss"
-import Image from 'next/image'
-import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
+import { Splide, SplideTrack } from '@splidejs/react-splide'
 import { Result } from '../_types/types'
-import Link from 'next/link'
-import AddButton from './AddButton'
 import SlideComponent from './SlideComponent'
-
-const IMAGE_URL = process.env.NEXT_PUBLIC_IMAGE_URL
 
 const MovieSliderComponent = ({ results }: { results: Result[] }) => {
   return (
