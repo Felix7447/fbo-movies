@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import { Result } from '../_types/types'
 import Link from 'next/link'
+import AddButton from './AddButton'
+import SlideComponent from './SlideComponent'
 
 const IMAGE_URL = process.env.NEXT_PUBLIC_IMAGE_URL
 
@@ -35,11 +37,7 @@ const MovieSliderComponent = ({ results }: { results: Result[] }) => {
       <SplideTrack className={styles.slider_track}>
         {
           results?.map((movie) => (
-            <SplideSlide key={`movie-${movie.id}`} className={styles.slide}>
-              <Link href={`/movie/${movie.id}`}>
-                <Image className={styles.slide_image} src={`${IMAGE_URL}${movie.poster_path}`} alt={`movie-${movie.id}`} fill priority sizes='auto' />
-              </Link>
-            </SplideSlide>
+            <SlideComponent key={`movie-${movie.id}`} info={movie}/>
           ))
         }
       </SplideTrack>

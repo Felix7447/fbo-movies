@@ -5,6 +5,7 @@ import useGetData from '../_hooks/useGetData'
 import { endpoints } from '../_config/endpoints'
 import { options } from '../_config/fetchOptions'
 import SerieSliderComponent from '../_components/SerieSliderComponent'
+import EmptyList from '../_components/EmptyList'
 
 const FavoriteSeriesContainer = () => {
   const { data } = useGetData(endpoints.favoriteSeries, options)
@@ -19,7 +20,7 @@ const FavoriteSeriesContainer = () => {
         (
           <SerieSliderComponent results={results} />
         ) : (
-          "Empty List"
+          <EmptyList/>
         )
       }
     </section>

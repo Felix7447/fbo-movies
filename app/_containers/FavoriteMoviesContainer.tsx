@@ -5,6 +5,7 @@ import useGetData from '../_hooks/useGetData'
 import { endpoints } from '../_config/endpoints'
 import { options } from '../_config/fetchOptions'
 import MovieSliderComponent from '../_components/MovieSliderComponent'
+import EmptyList from '../_components/EmptyList'
 
 const FavoriteMoviesContainer = () => {
   const { data } = useGetData(endpoints.favoriteMovies, options)
@@ -19,7 +20,7 @@ const FavoriteMoviesContainer = () => {
         (
           <MovieSliderComponent results={results} />
         ) : (
-          "Empty List"
+          <EmptyList />
         )
       }
     </section>

@@ -4,9 +4,9 @@ import styles from '@/styles/addButton.module.scss'
 import PlusIcon from '../_icons/PlusIcon'
 import { endpoints } from '../_config/endpoints'
 import { addFavOptions, removeFavOptions } from '../_config/fetchOptions'
-import { favorites } from '../_config/favoriteList'
 import CheckedIcon from '../_icons/CheckedIcon'
-// const fs = require('fs')
+import TrashIcon from '../_icons/TrashIcon'
+import { usePathname } from 'next/navigation'
 
 interface Props {
   body: {
@@ -18,6 +18,7 @@ interface Props {
 const AddButton = ({ body }: Props) => {
 
   const [isFav, setIsFav] = useState(sessionStorage.getItem(body.media_id.toString()))
+
 
   const addToFavorites = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault()
@@ -31,6 +32,7 @@ const AddButton = ({ body }: Props) => {
       .catch(err => console.error('error:' + err));
   }
 
+
   const removeFromFavorites = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault()
     event.stopPropagation()
@@ -43,14 +45,18 @@ const AddButton = ({ body }: Props) => {
       .catch(err => console.error('error:' + err));
   }
 
+
   const eventHandler = isFav ? removeFromFavorites : addToFavorites
+
+  const pathname = usePathname()
+  const removeIcon = pathname.includes('account') ? <TrashIcon/> : <CheckedIcon />
 
   return (
     <button className={styles.add_button} onClick={eventHandler}>
       {
         isFav ?
         (
-          <CheckedIcon />
+          removeIcon
         ) : (
           <PlusIcon />
         )

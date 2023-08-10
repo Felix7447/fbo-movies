@@ -35,6 +35,15 @@
   }
 }
 
+.slide_link {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-bottom: 1em;
+  padding-right: 1em;
+}
+
 .slide_image {
   object-fit: fill;
 }
