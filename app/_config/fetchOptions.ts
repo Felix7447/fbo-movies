@@ -8,7 +8,7 @@ export const options = {
   }
 }
 
-export const addFavOptions = (body: {media_type: string, media_id: number}) => {
+export const addFavOptions = (body: {media_type: string, media_id: number}, favorite: boolean) => {
   const options = {
     method: 'POST',
     headers: {
@@ -16,21 +16,7 @@ export const addFavOptions = (body: {media_type: string, media_id: number}) => {
       'content-type': 'application/json',
       Authorization: `Bearer ${ACCESS_TOKEN}`
     },
-    body: JSON.stringify({...body, favorite: true})
-  }
-
-  return options
-}
-
-export const removeFavOptions = (body: {media_type: string, media_id: number}) => {
-  const options = {
-    method: 'POST',
-    headers: {
-      accept: 'application/json',
-      'content-type': 'application/json',
-      Authorization: `Bearer ${ACCESS_TOKEN}`
-    },
-    body: JSON.stringify({...body, favorite: false})
+    body: JSON.stringify({...body, favorite: favorite})
   }
 
   return options
