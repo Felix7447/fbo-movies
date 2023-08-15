@@ -31,6 +31,7 @@ const SearchCardItem = ({ info }: { info: Result | SearchResult }) => {
         alt={info.name || info.title || ""} 
         fill 
         priority
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
       <aside className={styles.info}>
         <h1>

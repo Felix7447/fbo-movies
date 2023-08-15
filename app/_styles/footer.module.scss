@@ -5,6 +5,14 @@
   padding: 2em;
 }
 
+.black_footer {
+  min-height: 20vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 2em;
+  background-color: black;
+}
+
 .main {
   width: 100%;
   display: flex;
