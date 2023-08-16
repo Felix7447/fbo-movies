@@ -65,3 +65,13 @@
     display: block;
   }
 }
+
+@media (max-width: 480px) {
+  .menu {
+    left: -150%;
+  }
+
+  .menu_open {
+    left: -2em;
+  }
+}
