@@ -1,27 +1,41 @@
+"use client"
 import React from 'react'
 import styles from '@/styles/mainSlider.module.scss'
-import MainSliderComponent from '../_components/MainSliderComponent'
+import { Splide, SplideTrack } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
+import useGetData from '../_hooks/useGetData'
 import { options } from '../_config/fetchOptions'
+import MainSlide from '../_components/MainSlide';
 
-const getData = async (url: string) => {
-  try {
-    await setTimeout(() => {
-      console.log('loading');  
-    }, 5000)
-    const res = await fetch(url, options)
-    const data = await res.json()
-    return data
-  } catch (error) {
-    console.log(error)
-  }
-}
+const MainSlider = ({ endpoint }: { endpoint: string }) => {
+  const { data } = useGetData(endpoint, options)
 
-const MainSlider = async ({ endpoint }: { endpoint: string }) => {
-  const data = await getData(endpoint)
-
+  const { results } = data 
   return (
     <section className={styles.container}>
-      <MainSliderComponent data={data} />
+      <Splide
+        hasTrack={false}
+        className={styles.splide}
+        tag='nav'
+        aria-label="Main Slider Movies"
+        options={{
+          autoplay: true,
+          type: 'slide',
+          rewind: true,
+          speed: 1000,
+          rewindSpeed: 1500,
+          easing: 'ease',
+          omitEnd: true
+        }}
+      >
+        <SplideTrack className={styles.splide__track}>
+        {
+          results?.slice(0, 7).map((movie) => (
+            <MainSlide key={`trending-${movie.id}`} movie={movie}/>
+          ))
+        }
+        </SplideTrack>
+      </Splide>
     </section>
   )
 }
