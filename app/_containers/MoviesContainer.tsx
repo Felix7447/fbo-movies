@@ -1,20 +1,22 @@
 "use client"
-import React from 'react'
+import React, { useRef } from 'react'
 import styles from "@/styles/containerSlider.module.scss"
 import useGetData from '../_hooks/useGetData'
 import { endpoints } from '../_config/endpoints'
 import { options } from '../_config/fetchOptions'
 import MovieSliderComponent from '../_components/MovieSliderComponent'
+import useIntersectionObserver from '../_hooks/useIntersectionObserver'
 
 const MoviesContainer = () => {
-  const { data } = useGetData(endpoints.discoverMovies, options)
+  const slider = useRef<HTMLElement | null>(null)
 
-  const { results } = data
+  const isVisible = useIntersectionObserver(slider)
+  const { data } = useGetData(endpoints.discoverMovies, options)
   
   return (
-    <section className={styles.slider_container}>
+    <section ref={slider} className={styles.slider_container}>
       <h3 className={styles.slider_title}>Movies</h3>
-      <MovieSliderComponent results={results} />
+      {isVisible && <MovieSliderComponent results={data?.results} />}
     </section>
   )
 }

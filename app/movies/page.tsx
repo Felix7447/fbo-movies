@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '@/styles/page.module.scss'
-import MainSlider from '../_containers/MainSlider'
+import MainSlider from '../_containers/MainSliderContainer'
 import TopMoviesContainer from '../_containers/TopMoviesContainer'
 import MoviesContainer from '../_containers/MoviesContainer'
 import NowPlayingMovies from '../_containers/NowPlayingMovies'
