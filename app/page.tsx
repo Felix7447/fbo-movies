@@ -1,5 +1,5 @@
 import styles from '@/styles/page.module.scss'
-import MainSlider from './_containers/MainSlider'
+import MainSlider from './_containers/MainSliderContainer'
 import MoviesContainer from './_containers/MoviesContainer'
 import SeriesContainer from './_containers/SeriesContainer'
 import TopMoviesContainer from './_containers/TopMoviesContainer'
@@ -8,6 +8,7 @@ import AiringTodayContainer from './_containers/AiringTodayContainer'
 import SpecialMovieContainer from './_containers/SpecialMovieContainer'
 import SpecialSerieContainer from './_containers/SpecialSerieContainer'
 import { endpoints } from './_config/endpoints'
+import { Suspense } from 'react'
 
 const SPECIAL_MOVIE_ID = 346698
 const SPECIAL_SERIE_ID = 72879
@@ -15,7 +16,9 @@ const SPECIAL_SERIE_ID = 72879
 export default function Home() {
   return (
     <main className={styles.main}>
-      <MainSlider endpoint={endpoints.trending} />
+      <Suspense fallback={<p>Loading...</p>}>
+        <MainSlider endpoint={endpoints.trending} />
+      </Suspense>
       <MoviesContainer />
       <SeriesContainer />
       <SpecialMovieContainer movieID={SPECIAL_MOVIE_ID}/>

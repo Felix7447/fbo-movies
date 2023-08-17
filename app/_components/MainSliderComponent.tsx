@@ -5,18 +5,11 @@ import styles from '@/styles/mainSlider.module.scss'
 import { Splide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
-import useGetData from '../_hooks/useGetData';
 import MainSlide from '../_components/MainSlide';
-import { options } from '../_config/fetchOptions';
 
-const MainSlider = ({ endpoint }: { endpoint: string }) => {
-  const { data } = useGetData(endpoint, options)
-
-  const { results } = data 
-  
+const MainSliderComponent = ({ data }) => {
   return (
-    <section className={styles.container}>
-      <Splide
+    <Splide
         hasTrack={false}
         className={styles.splide}
         tag='nav'
@@ -33,14 +26,13 @@ const MainSlider = ({ endpoint }: { endpoint: string }) => {
       >
         <SplideTrack className={styles.splide__track}>
         {
-          results?.slice(0, 7).map((movie) => (
+          data?.results?.slice(0, 7).map((movie) => (
             <MainSlide key={`trending-${movie.id}`} movie={movie}/>
           ))
         }
         </SplideTrack>
       </Splide>
-    </section>
   )
 }
 
-export default MainSlider
+export default MainSliderComponent

@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '@/styles/page.module.scss'
-import MainSlider from '../_containers/MainSlider'
+import MainSlider from '../_containers/MainSliderContainer'
 import { endpoints } from '../_config/endpoints'
 import AiringTodayContainer from '../_containers/AiringTodayContainer'
 import SeriesContainer from '../_containers/SeriesContainer'

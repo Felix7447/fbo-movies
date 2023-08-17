@@ -1,9 +1,10 @@
 "use client"
-import React from 'react'
+import React, { useRef } from 'react'
 import styles from "@/styles/containerSlider.module.scss"
 import useGetData from '../_hooks/useGetData'
 import { endpoints } from '../_config/endpoints'
 import MovieSliderComponent from '../_components/MovieSliderComponent'
+import useIntersectionObserver from '../_hooks/useIntersectionObserver'
 
 const ACCESS_TOKEN = process.env.NEXT_PUBLIC_ACCESS_TOKEN
 
@@ -16,14 +17,16 @@ const OPTIONS = {
 }
 
 const TopMoviesContainer = () => {
+  const slider = useRef<HTMLElement | null>(null)
+  const isVisible = useIntersectionObserver(slider)
   const { data } = useGetData(endpoints.topRatedMovies, OPTIONS)
 
   const { results } = data
   
   return (
-    <section className={styles.slider_container}>
+    <section ref={slider} className={styles.slider_container}>
       <h3 className={styles.slider_title}>Top Rated Movies</h3>
-      <MovieSliderComponent results={results} />
+      {isVisible && <MovieSliderComponent results={results} />}
     </section>
   )
 }
